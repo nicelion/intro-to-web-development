@@ -1,0 +1,25 @@
+/*
+ * settings.json
+ * .vscode
+ * 
+ * Created by Ian Thompson on August 31st 2023
+ * ianthompson@nicelion.com
+ * https://www.nicelion.com
+ * 
+ * Copyright (c) 2023 Nice Lion Technologies LLC. All Rights Reserved.
+ * 
+ */
+{
+    "psi-header.changes-tracking": {
+    
+    },
+    "psi-header.templates": [
+        {
+            "language": "markdown",
+            "template": [
+                // "**Created on:** <<filecreated('dddd MMMM Do YYYY')>>",
+                // "Last Modified: <<filecreated('dddd MMMM Do YYYY h:mm:ss a')>>",
+            ]
+        }
+    ]
+}
