@@ -40,7 +40,7 @@ The first program we will run is `ping`. `ping` will send packet requests to a s
 
 To begin this program, type the following into your command line:
 
-```
+```bash
 ping www.iancthompson.dev
 ```
 
@@ -49,7 +49,7 @@ ping www.iancthompson.dev
 
 Now, in your terminal, you should recive output that looks similar to the following:
 
-```
+```bash
 ping www.iancthompson.dev
 
 PING cname.vercel-dns.com (76.76.21.98): 56 data bytes
@@ -85,7 +85,7 @@ First, we need to determine our current _working directory_, or where in the fil
 
 To find our current working directory, simply type the command `pwd`. You will recieve output that looks something like:
 
-```
+```bash
 pwd
 
 /Users/[USERNAME]
@@ -109,10 +109,105 @@ Now, you can see all of the files and folders that exist within your current wor
 
 So that you may form a deeper connection of where exactly you are in the filesystem, run the following command in the command line:
 
-```
+```bash
 open .
 ```
 
 `open` will attempt to open the folder or file in the same way as if you were to double-click it in Finder. The `.` tells the command to open the current _working directory_.
 
 You should now see Finder open to the current working directory. You should be able to see all of the folders and files in Finder that you did when you ran the `ls` command.
+
+### Changing Directories
+
+The command line is no good if we can only work within the default working directory. So, we must be able to _change_ the current working directory.
+
+You may assume that we could use the `open` command that we just learned.
+
+**You try:** Try using the `open` command to open the Documents folder that is in your current working directory. Remember, we used the `.` to "open" the current working directory. To afflict commands on specific files or folders, we typically will state the command and _then_ state the file.
+
+So then, the command could be: `open Documents`
+
+What happens?
+
+You will notice that the Documents folder is opened via Finder and not the terminal. If you were to run `pwd` you would see that it has not changed.
+
+To change the current working directory of the command line, we will need a different command
+
+#### The `cd` command
+
+`cd` is the command that is used to change directories. To change into your desired directory:
+
+```bash
+cd PATH
+```
+
+- `cd` is the change directory command
+- `PATH` is the directory or folder you wish to enter into
+
+Thus, to change into the "Documents" directory, your command would look like:
+
+```bash
+cd Documents
+```
+
+Now, if you were to run `pwd`, you would see that the path to the working directory has now changed. Additionally, if you were to run the `ls` command, you would now see a list of all of teh files and directories within the Documents directory.
+
+How do we go back a directory? To do this, we will add two periods to the end of the `cd` command. It would look like this: `cd ..`.
+
+**Application question:** What would happen if we ran `cd .` ?
+
+Knowing the `.` applies the command on the current working directory, `cd`ing on the `.` directory would not change the current working directory.
+
+### Creating new directories and files
+
+#### Creating new directories
+
+To create a directory, we will use the `mkdir` command. It looks like this:
+
+```bash
+mkdir Folder
+```
+
+- `mkdir` is the command to make a new directory
+- `Folder` specifies what the new directory will be called.
+
+This new directory will be created in the current working directory.
+
+`mkdir` **does not** change the current working directory. You will need to `cd` into the new directory you have just created
+
+#### Creating new files
+
+Suppose you wish to create a new file within the current working directory, but do not wish to edit it. To do this, you will use the `touch` command. It looks like this:
+
+```bash
+touch MyNewFile.txt
+```
+
+The command above will create a new .txt file called MyNewFile. It will not open it, nor will any text be added to it.
+
+<!-- ##### Deeper Connections
+If you want to edit this new file via the command line, you could use a program that is preinstalled on your Mac called `nano`.
+
+If you have already created the file via `touch`, you could run:
+
+```bash
+nano MyNewFile.txt
+```
+
+You will notice the terminal change and open the in-terminal `nano` text editor. You can use this as you would a normal text editor, but you can only interact using keyboard and mouse.
+
+Once you have started typing some text, you can save the text by typing `CTRL+X` to exit. Then,  -->
+
+# Conclusion
+
+By the end of this module, you should be able to understand what the command line is and how to execute basic system commands to change directories, list content of directories, create empty files, and make new directories.
+
+In your web development journey, you will rely heavily on the command line, though you will likely do your basic text editing in a different application such as VSCode.
+
+When you get into deploying your websites, installing packages to help you build great websites, or even using source control programs like `git`, you will need _at least_ a basic understanding of how to use the command line.
+
+If this was a lot, do not worry. As with anything, the more you use the command line, thee more you will learn and become comfortable using it.
+
+## Additional resrouces
+
+- [Basic Unix Commands](https://www.unixtutorial.org/basic-unix-commands)
